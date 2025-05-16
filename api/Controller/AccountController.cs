@@ -8,7 +8,7 @@ namespace api.Controller;
 [Route("api/[controller]")]
 public class AccountController(IAccountRepository accountRepository) : ControllerBase
 {
-
+    
     [HttpPost("Register")]
     public async Task<ActionResult<Appuser>> Register(Appuser userInput, CancellationToken cancellationToken)
     {
@@ -30,6 +30,4 @@ public class AccountController(IAccountRepository accountRepository) : Controlle
 
         return appusers;
     }
-
-
 }
