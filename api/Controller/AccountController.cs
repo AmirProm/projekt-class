@@ -1,14 +1,10 @@
-using api.interfaces;
-using api.model;
-using Microsoft.AspNetCore.Mvc;
-
 namespace api.Controller;
 
 [ApiController]
 [Route("api/[controller]")]
 public class AccountController(IAccountRepository accountRepository) : ControllerBase
 {
-    
+
     [HttpPost("Register")]
     public async Task<ActionResult<Appuser>> Register(Appuser userInput, CancellationToken cancellationToken)
     {
@@ -30,4 +26,5 @@ public class AccountController(IAccountRepository accountRepository) : Controlle
 
         return appusers;
     }
+    
 }

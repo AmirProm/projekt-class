@@ -1,13 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using api.interfaces;
-using api.model;
-using api.Settings;
-using MongoDB.Bson;
-using MongoDB.Driver;
-
 namespace api.Repositories;
 
 public class AccountRepository : IAccountRepository
