@@ -20,5 +20,16 @@ public class AccountController(IAccountRepository accountRepository) : Controlle
         return appuser;
     }
 
+    [HttpGet("Get-all")]
+    public async Task<ActionResult<List<Appuser>>> GetAll(CancellationToken cancellationToken)
+    {
+        List<Appuser>? appusers = await accountRepository.GetAllAsync(cancellationToken);
+
+        if (appusers is null)
+            return NoContent();
+
+        return appusers;
+    }
+
 
 }
