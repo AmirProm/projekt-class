@@ -26,7 +26,7 @@ public class AccountRepository : IAccountRepository
 public async Task<Appuser?> RegisterAsync(Appuser userInput, CancellationToken cancellationToken)
     {
         Appuser user = await _collection.Find<Appuser>(doc =>
-        doc.email == userInput.email).FirstOrDefaultAsync(cancellationToken);
+        doc.Email == userInput.Email).FirstOrDefaultAsync(cancellationToken);
 
         if (user is not null)
             return null;
