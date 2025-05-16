@@ -36,7 +36,7 @@ public async Task<Appuser?> RegisterAsync(Appuser userInput, CancellationToken c
         return user;
     }
 
-    public async Task<List<Appuser>?> GetAllAsync(CancellationToken cancellationToken)
+     public async Task<List<Appuser>?> GetAllAsync(CancellationToken cancellationToken)
     {
         List<Appuser> AppUsers = await _collection.Find(new BsonDocument()).ToListAsync(cancellationToken);
 
@@ -46,3 +46,13 @@ public async Task<Appuser?> RegisterAsync(Appuser userInput, CancellationToken c
         return AppUsers;
     }
 }
+
+    // public async Task<List<Appuser>?> GetAllAsync(CancellationToken cancellationToken)
+    // {
+    //     List<Appuser> AppUsers = await _collection.Find(new BsonDocument()).ToListAsync(cancellationToken);
+
+    //     if (AppUsers.Count == 0)
+    //         return null;
+
+    //     return AppUsers;
+    // }
