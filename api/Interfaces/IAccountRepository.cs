@@ -9,7 +9,5 @@ namespace api.interfaces;
 public interface IAccountRepository
 {
     public Task<Appuser> RegisterAsync(Appuser userInput, CancellationToken cancellationToken);
-      public Task<Appuser> GetAllAsync(CancellationToken cancellationToken);
-
-
+     public Task<Appuser> GetAllAsync(CancellationToken cancellationToken);
 }
