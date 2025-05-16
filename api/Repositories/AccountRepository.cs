@@ -9,6 +9,7 @@ namespace api.Repositories;
 
 public class AccountRepository : IAccountRepository
 {
+
     public Task<Appuser> GetAllAsync(CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
