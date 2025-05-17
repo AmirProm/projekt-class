@@ -8,7 +8,7 @@
       <input type="text" [formControl]="NameCtrl">
 
       <div class="button-1">
-        <button (click)="register()" mat-button color="praimery">Register</button>
+        <button (click)="register()" mat-button color="praimery" [disabled]="registerFg.invalid">Register</button>
         <button (click)="getAll()" mat-stroked-button color="Waren">GetAll</button>
       </div>
 
