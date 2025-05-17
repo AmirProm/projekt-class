@@ -7,6 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppUser } from './model/ app-user.model';
 import { Observable } from 'rxjs';
+import { response } from 'express';
 
 @Component({
   selector: 'app-root',
@@ -41,5 +42,12 @@ export class AppComponent {
 
     let userResponse: Observable<AppUser>= this.accountService.register(userIn);
 
+    userResponse.subscribe({
+      next: (response => {
+        this.appUser = response;
+        console.log(this.appUser);
+      })
+    });
   }
+
 }
