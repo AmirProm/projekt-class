@@ -9,14 +9,23 @@
 
       <div class="button-1">
         <button (click)="register()" mat-button color="praimery">Register</button>
-        <button (click)="getAll()" mat-stroked-button color="Waren">GetAll</button>
       </div>
 
       <h1>
         {{appUser?.email}}
         {{appUser?.name}}
       </h1>
+      
+      <button (click)="getAll()" mat-stroked-button color="Waren">GetAll</button>
 
+      @for (member of members; track $index) {
+        
+        <h1>
+          {{member.email}}
+          {{member.name}}
+        </h1>
+        
+      }
 
     </form>
   </div>
