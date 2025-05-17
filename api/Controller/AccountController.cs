@@ -5,8 +5,8 @@ namespace api.Controller;
 public class AccountController(IAccountRepository accountRepository) : ControllerBase
 {
 
-    [HttpPost("Register")]
-    public async Task<ActionResult<Appuser>> Register(Appuser userInput, CancellationToken cancellationToken)
+    [HttpPost("register")]
+    public async Task<ActionResult<Appuser?>> Register(Appuser userInput, CancellationToken cancellationToken)
     {
         Appuser? appuser = await accountRepository.RegisterAsync(userInput, cancellationToken);
 
@@ -16,8 +16,8 @@ public class AccountController(IAccountRepository accountRepository) : Controlle
         return appuser;
     }
 
-    [HttpGet("Get-all")]
-    public async Task<ActionResult<List<Appuser>>> GetAll(CancellationToken cancellationToken)
+    [HttpGet("get-all")]
+    public async Task<ActionResult<List<Appuser?>>> GetAll(CancellationToken cancellationToken)
     {
         List<Appuser>? appusers = await accountRepository.GetAllAsync(cancellationToken);
 
