@@ -11,7 +11,8 @@ import { response } from 'express';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, FormsModule, ReactiveFormsModule,
+    MatButtonModule, MatFormFieldModule, MatInputModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
