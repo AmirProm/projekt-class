@@ -46,9 +46,9 @@ export class AppComponent {
       name: this.NameCtrl.value
     }
 
-    let userResponse: Observable<AppUser> = this.accountService.register(userIn);
+    let userResponse$: Observable<AppUser> = this.accountService.register(userIn);
 
-    userResponse.subscribe({
+    userResponse$.subscribe({
       next: (response => {
         this.appUser = response;
         console.log(this.appUser);
