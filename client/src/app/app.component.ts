@@ -1,5 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Account‍‍Service } from './services/account‍‍.service';
+import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { AppUser } from './model/ app-user.model';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +14,8 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'client';
+  accountService = inject(Account‍‍Service);
+  fB = inject(FormBuilder);
+  appUser: AppUser | undefined;
+  member: AppUser[] | undefined;
 }
