@@ -1,14 +1,17 @@
 <section>
-  <div class="register">
-      <form>
-          <label>Email</label>
-          <input type="email" [formControl]="EmailCtrl">
+  <div class="item">
+    <form>
+      <label>Email</label>
+      <input type="email" [formControl]="EmailCtrl">
 
-          <label>Name</label>
-          <input type="text" [formControl]="NameCtrl">
+      <label>Name</label>
+      <input type="text" [formControl]="NameCtrl">
 
-          <button (click)="register()">Register</button>
-          <button (click)="getAll()">GetAll</button>
-      </form>
+      <div class="button-1">
+        <button (click)="register()" mat-button color="praimery">Register</button>
+        <button (click)="getAll()" mat-stroked-button color="Waren">GetAll</button>
+      </div>
+
+    </form>
   </div>
 </section>
