@@ -10,4 +10,11 @@ export class Account‍‍Service {
   http = inject(HttpClient);
   private readonly _baseApiUrl: string = 'http://localhost:5000/api/';
 
+  register(user: AppUser): Observable<AppUser> {
+    // return this.http.post<AppUser>(this._baseApiUrl + 'account/register', user);
+    let userResponse: Observable<AppUser> = this.http.post<AppUser>(this._baseApiUrl + 'account/register', user);
+
+    return userResponse;
+  }
+
   }
