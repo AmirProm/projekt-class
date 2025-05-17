@@ -8,7 +8,7 @@
       <input type="text" [formControl]="NameCtrl">
 
       <div class="button-1">
-        <button (click)="register()" mat-button color="praimery" [disabled]="registerFg.invalid">Register</button>
+        <button (click)="register()" mat-button color="praimery">Register</button>
         <button (click)="getAll()" mat-stroked-button color="Waren">GetAll</button>
       </div>
 
@@ -16,36 +16,37 @@
   </div>
 </section>
 
-<p>member works!</p><div class="container">
+<p>member works!</p>
+<div class="container">
   <h1>Find Your Beloved One!</h1>
   <div class="memebrs-container">
-@for (member of members; track $index) {
-  <mat-card class="card">
+    @for (member of members; track $index) {
+    <mat-card class="card">
       <div class="card-img-wrapper">
-          <img src="image.png" alt="{{member.name}}">
-          <ul class="user-icons">
-              <li>
-                  <button mat-mini-fab>
-                      <mat-icon color="primary">person_add</mat-icon>
-                  </button>
-              </li>
-              <li>
-                  <button mat-mini-fab>
-                      <mat-icon color="warn">favorite</mat-icon>
-                  </button>
-              </li>
-              <li>
-                  <button mat-mini-fab>
-                      <mat-icon color="accent">mail</mat-icon>
-                  </button>
-              </li>   
-          </ul>
+        <img src="image.png" alt="{{member.name}}">
+        <ul class="user-icons">
+          <li>
+            <button mat-mini-fab>
+              <mat-icon color="primary">person_add</mat-icon>
+            </button>
+          </li>
+          <li>
+            <button mat-mini-fab>
+              <mat-icon color="warn">favorite</mat-icon>
+            </button>
+          </li>
+          <li>
+            <button mat-mini-fab>
+              <mat-icon color="accent">mail</mat-icon>
+            </button>
+          </li>
+        </ul>
       </div>
       <mat-card-header>
-          <div class="title">
-              <mat-icon>boy</mat-icon>
-          </div>
-          <mat-card-subtitle>{{ member.name }}</mat-card-subtitle>
+        <div class="title">
+          <mat-icon>boy</mat-icon>
+        </div>
+        <mat-card-subtitle>{{ member.name }}</mat-card-subtitle>
       </mat-card-header>
-  </mat-card>
-  }
+    </mat-card>
+    }
