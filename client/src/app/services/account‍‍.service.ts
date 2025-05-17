@@ -12,19 +12,19 @@ export class Account‍‍Service {
 
   register(user: AppUser): Observable<AppUser> {
     // return this.http.post<AppUser>(this._baseApiUrl + 'account/register', user);
-    let userResponse: Observable<AppUser> = this.http.post<AppUser>(this._baseApiUrl + 'account/register', user);
+    let userResponse$: Observable<AppUser> = this.http.post<AppUser>(this._baseApiUrl + 'account/register', user);
 
-    return userResponse;
+    return userResponse$;
   }
 
   getAllMember(): Observable<AppUser[]>  {
 
     // return this.http.get<Member[]>(this._baseApiUrl + 'account');
 
-    let memberResponse: Observable<AppUser[]> = this.http.get<AppUser[]>
+    let memberResponse$: Observable<AppUser[]> = this.http.get<AppUser[]>
     (this._baseApiUrl + 'account/get-all');
 
-    return memberResponse
+    return memberResponse$;
   
   }
 
