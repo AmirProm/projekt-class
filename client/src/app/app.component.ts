@@ -19,7 +19,9 @@ export class AppComponent {
   accountService = inject(Account‍‍Service);
   fB = inject(FormBuilder);
   appUser: AppUser | undefined;
-  member: AppUser[] | undefined;
+  members: AppUser[] | undefined;
+
+  //#region registerFg 
 
   registerFg = this.fB.group({
     emailCtrl: ['', [Validators.required, Validators.email]],
@@ -33,6 +35,7 @@ export class AppComponent {
   get NameCtrl(): FormControl {
     return this.registerFg.get('nameCtrl') as FormControl;
   }
+  //#endregion
 
   register(): void {
     let userIn: AppUser = {
@@ -40,12 +43,23 @@ export class AppComponent {
       name: this.NameCtrl.value
     }
 
-    let userResponse: Observable<AppUser>= this.accountService.register(userIn);
+    let userResponse: Observable<AppUser> = this.accountService.register(userIn);
 
     userResponse.subscribe({
       next: (response => {
         this.appUser = response;
         console.log(this.appUser);
+      })
+    });
+  }
+
+  getAll(): void {
+    let member: Observable<AppUser[]> = this.accountService.getAllMember();
+
+    member.subscribe({
+      next: (response => {
+        this.members = response;
+        console.log(response);
       })
     });
   }
