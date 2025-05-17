@@ -7,12 +7,14 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppUser } from './model/ app-user.model';
 import { Observable } from 'rxjs';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import { response } from 'express';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, FormsModule, ReactiveFormsModule,
-    MatButtonModule, MatFormFieldModule, MatInputModule],
+    MatButtonModule, MatFormFieldModule, MatInputModule, MatCardModule, MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
