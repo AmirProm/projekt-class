@@ -23,7 +23,7 @@ public async Task<Appuser?> RegisterAsync(Appuser userInput, CancellationToken c
 
         await _collection.InsertOneAsync(userInput, null, cancellationToken);
 
-        return user;
+        return userInput;
     }
 
      public async Task<List<Appuser>?> GetAllAsync(CancellationToken cancellationToken)
