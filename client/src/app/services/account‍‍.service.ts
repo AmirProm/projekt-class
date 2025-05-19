@@ -17,15 +17,15 @@ export class Account‍‍Service {
     return userResponse$;
   }
 
-  getAllMember(): Observable<AppUser[]>  {
+  getAllMember(): Observable<AppUser[]> {
 
     // return this.http.get<Member[]>(this._baseApiUrl + 'account');
 
     let memberResponse$: Observable<AppUser[]> = this.http.get<AppUser[]>
-    (this._baseApiUrl + 'account/get-all');
+      (this._baseApiUrl + 'account/get-all');
 
     return memberResponse$;
-  
-  }
 
   }
+
+}
