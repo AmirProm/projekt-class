@@ -1,4 +1,4 @@
-/* section {
+ section {
     display: flex;
     justify-content: center;
 }
@@ -18,8 +18,7 @@
     justify-content: center;
 }
 
-
-/* get all member */
+ 
 
 .container {
     display: flex;
@@ -92,7 +91,7 @@
                 }
             }
         }
-    } */
+    } 
 }
 
 
